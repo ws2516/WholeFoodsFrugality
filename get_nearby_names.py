@@ -40,4 +40,5 @@ def get_names_nearby(page_sourced):
     return desired_class
 
 
-print(get_names_nearby(get_list_of_names('Collierville TN')))
+def on_input_run(string):
+    return (get_names_nearby(get_list_of_names(string)))
