@@ -28,5 +28,5 @@ def all_together(name_list):
         new = name_to_sale_df(i)
         final_df = final_df.append(new)
 
-    final = (final_df.drop_duplicates(subset='Sale Item', keep="first").head(50))
+    final = (final_df.drop_duplicates(subset='Sale Item', keep="first"))
     return final

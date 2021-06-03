@@ -30,7 +30,7 @@ def get_list_of_names(cityname):
         driver.close()
         return saved
     except:
-        return "Oops, there does not seem to be a Whole Foods near you."
+    	return "Oops, there does not seem to be a Whole Foods near you."
 
 def get_names_nearby(page_sourced):
     if page_sourced == "Oops, there does not seem to be a Whole Foods near you.":

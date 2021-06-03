@@ -5,4 +5,6 @@ def go(inputs):
     whole_foods_names = get_nearby_names.on_input_run(inputs)
     names_list = [i.split('-')[0] for i in whole_foods_names]
     final_df = sales_page_scraper.all_together(names_list)
-    return final_df
+    return final_df.to_html()
+
+print(go(input('What is your ZIP Code? ')))
