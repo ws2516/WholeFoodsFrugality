@@ -13,7 +13,7 @@ def items_on_sale(page_url,name):
     return pd.DataFrame({'Sale Item': sale_item_titles, 'Sale Price':sale_item_prices, 'Store':[name]*len(sale_item_prices)})
 
 def get_url_from_name(name):
-    df = pd.read_csv('./ListOfStores.csv')
+    df = pd.read_csv('model/ListOfStores.csv')
     return df[df['Store Name'] == 'Domain']['Store URL'].values[0]
 
 def name_to_sale_df(name):
