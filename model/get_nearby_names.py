@@ -19,7 +19,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 def get_list_of_names(cityname):
     if True:
-    	chrome_options = webdriver.Options()
+    	chrome_options = Options()
     	chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     	chrome_options.add_argument("--headless")
     	chrome_options.add_argument("--disable-dev-shm-usage")
