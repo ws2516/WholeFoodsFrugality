@@ -39,7 +39,7 @@ def get_names_nearby(page_sourced):
     if page_sourced == "Oops, there does not seem to be a Whole Foods near you.":
         return ["Oops, there does not seem to be a Whole Foods near you."]
     html_content = BeautifulSoup(page_sourced, "html.parser")
-    desired_class = [i.find('span').text for i in html_content.find_all('li', class_="wfm-search-bar--list_item")]
+    desired_class = [html_content.find_all('li', class_="wfm-search-bar--list_item").find('span').text]
     return desired_class
 
 
