@@ -7,6 +7,7 @@ from model import combination_file
 
 from flask import Flask, request, render_template, session, redirect
 
+
 app = flask.Flask(__name__, template_folder='templates', static_folder = 'assets')
 
 @app.route('/', methods=['GET', 'POST'])
@@ -37,7 +38,6 @@ def contact_page():
 @app.errorhandler(500)
 def pageNotFound(error):
     return flask.render_template('505.html')
-
 
 if __name__ == '__main__':
     app.run()
