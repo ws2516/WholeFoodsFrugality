@@ -18,8 +18,10 @@ def main():
     if flask.request.method == 'POST':
     	
     	zip_code = flask.request.form['ZIP']
+    	
+    	store_name = flask.request.form['store_name']
 
-    	messaged = combination_file.go(zip_code)
+    	messaged = combination_file.go(zip_code, store_name)
     	
     	return render_template('index.html', waiting = messaged)
 

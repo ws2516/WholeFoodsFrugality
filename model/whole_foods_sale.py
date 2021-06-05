@@ -3,7 +3,8 @@ import bs4
 import pandas as pd
 from bs4 import BeautifulSoup
 
-def items_on_sale(page_url):
+def items_on_sale():
+    page_url = "https://www.wholefoodsmarket.com/sales-flyer?store-id=10005"
     page_sourced = requests.get(page_url).content
     html_content = BeautifulSoup(page_sourced, "html.parser")
     sale_items = html_content.findAll('h4', class_="w-sales-tile__product")
