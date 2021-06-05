@@ -32,6 +32,10 @@ def further_suggestions():
 def contact_page():
     return flask.render_template('About.html')
 
+@app.errorhandler(500)
+def pageNotFound(error):
+    return flask.render_template('505.html')
+
 
 if __name__ == '__main__':
     app.run()
