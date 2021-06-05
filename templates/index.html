@@ -110,7 +110,16 @@
          </div>
       </header>
       <section padding: 5%;>
-            <div class="loader">Loading...</div>
+            <div class="loader" id="loader" style="display:none">Loading...</div>
+            <script>
+function showDiv() {
+  document.getElementById('loader').style.display = "block";
+  setTimeout(function() {
+    document.getElementById('loader').style.display = "none";
+  },2000);
+   
+}
+      </script>
       </section>
       <section>
       <div align = "center"> <br> <br> {{ waiting | safe}} <br> <br> </div>
