@@ -6,9 +6,7 @@ import tabulate
 import email_sign_up
 import os
 
-
 from model import combination_file
-
 
 from flask import Flask, request, render_template, session, redirect
 from flask import send_from_directory
