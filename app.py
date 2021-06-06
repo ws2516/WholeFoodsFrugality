@@ -5,8 +5,7 @@ import gspread
 import tabulate
 import email_sign_up
 import os
-
-from model import combination_file
+import data_pipeline
 
 from flask import Flask, request, render_template, session, redirect
 from flask import send_from_directory
@@ -25,7 +24,7 @@ def main():
     	
     	store_name = flask.request.form['store_name']
 
-    	messaged = combination_file.go(zip_code, store_name)
+    	messaged = data_pipeline.go(zip_code, store_name)
     	
     	return render_template('index.html', waiting = messaged)
 
