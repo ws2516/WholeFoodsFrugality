@@ -21,3 +21,5 @@ def items_on_sale():
 		name_items.append(i['name'])
 		dollar_price.append(i['price'])
 	return pd.DataFrame({'Sale Item': name_items, 'Sale Price':dollar_price})
+
+print(items_on_sale())
