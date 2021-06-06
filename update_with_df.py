@@ -17,5 +17,7 @@ def get_from_sheet(sheet_name):
 	creds = ServiceAccountCredentials.from_json_keyfile_name(credentials)
 	client = gspread.authorize(creds)
 	sheet = client.open("FoodScrapeData").worksheet(sheet_name)
-	return sheet.get_all_values()
+	table = sheet.get_all_values()
+	headers = table.pop(0)
+	return pd.DataFrame(table, columns=headers)
 
