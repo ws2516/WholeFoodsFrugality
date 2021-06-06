@@ -11,5 +11,3 @@ def write_to_sheet(dataframe, sheet_name):
 	sheet = client.open("FoodSaleScrapeData").worksheet(sheet_name)
 	sheet.update([dataframe.columns.values.tolist()] + dataframe.values.tolist())
 	return 'Done'
-
-print(write_to_sheet(pd.DataFrame({'Hello':[1,2,3]}),'Try'))
