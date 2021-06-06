@@ -11,13 +11,13 @@
       <link rel="stylesheet" href="assets/css/styles.min.css">
       <link rel="stylesheet" href="assets/css/wff.css">
       <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNLC00RYY7"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-8M87V4XPHF"></script>
       <script>
          window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
          
-         gtag('config', 'G-BNLC00RYY7');
+         gtag('config', 'G-8M87V4XPHF');
       </script>
       <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
    </head>
@@ -26,8 +26,8 @@
          <div class="container">
             <a class="navbar-brand" href="/">Juhas Bazaar</a>
             <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-        	<div class="collapse navbar-collapse" id="navcol-1">
-            <a class="btn btn-primary ms-auto" role="button" href="/SignUp">Sign Up for Updates!</a>
+            <div class="collapse navbar-collapse" id="navcol-1">
+               <a class="btn btn-primary ms-auto" role="button" href="/SignUp">Sign Up for Updates!</a>
             </div>
          </div>
       </nav>
@@ -44,35 +44,36 @@
                         <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control" type="text" name="ZIP" placeholder="Enter your ZIP code or City/State..." style="padding: 11px 16px;"></div>
                         <div onsubmit="return false;" class="col-12 col-md-3"><button id="Login" class="btn btn-primary btn-lg" type="submit" onclick="showDiv()">Search!</button></div>
                      </div>
-                     	<div align = "center">
-                       		<input type="radio" id="WholeFoods" name="store_name" value="WholeFoods" checked>
-  							<label for="WholeFoods">Whole Foods</label><br>
-  							<input type="radio" id="Aldis US" name="store_name" value="Aldis US">
-  							<label for="Aldis US">Aldis US</label><br>
-  							<input type="radio" id="Aldis AU" name="store_name" value="Aldis AU">
-  							<label for="Aldis AU">Aldis AU</label>
-  							<input type="radio" id="Aldis UK" name="store_name" value="Aldis UK">
-  							<label for="Aldis UK">Aldis UK</label>
-  						</div>
+                     <br>
+                     <div align = "left">
+                        <label for="store_name">Choose a grocery chain:</label>
+                        <select name="store_name" id="store_name">
+                           <option value="WholeFoods">Whole Foods</option>
+                           <option value="Aldis US">Aldis US</option>
+                           <option value="Aldis AU">Aldis AU</option>
+                           <option value="Aldis UK">Aldis UK</option>
+                        </select>
+                     </div>
                   </form>
                </div>
             </div>
          </div>
       </header>
       <section padding: 5%;>
-            <div id="loader" style="display:none" align="center"> <br> <br> This may take a moment! Just hold on!</div>
-            <script>
-function showDiv() {
-  document.getElementById('loader').style.display = "block";
-  setTimeout(function() {
-    document.getElementById('loader').style.display = "none";
-  },2000);
-   
-}
+      <div id="loader" style="display:none" align="center"> <br> <br> This may take a moment! Just hold on!</div>
+      <script>
+         function showDiv() {
+           document.getElementById('loader').style.display = "block";
+           setTimeout(function() {
+             document.getElementById('loader').style.display = "none";
+           },2000);
+            
+         }
+               
       </script>
       </section>
       <section>
-      <div align = "center"> <br> <br> {{ waiting | safe}} <br> <br> </div>
+         <div align = "center"> <br> <br> {{ waiting | safe}} <br> <br> </div>
       </section>
       <!-- Start: Footer Basic -->
       <footer class="footer-basic">
@@ -90,14 +91,14 @@ function showDiv() {
          <!-- End: Copyright -->
       </footer>
       <!-- End: Footer Basic --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/smart-forms.min.js"></script>
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('manatmethods', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support Us',
-    'floating-chat.donateButton.background-color': '#00b9fe',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>
+      <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+      <script>
+         kofiWidgetOverlay.draw('manatmethods', {
+           'type': 'floating-chat',
+           'floating-chat.donateButton.text': 'Support Us',
+           'floating-chat.donateButton.background-color': '#00b9fe',
+           'floating-chat.donateButton.text-color': '#fff'
+         });
+      </script>
    </body>
 </html>
