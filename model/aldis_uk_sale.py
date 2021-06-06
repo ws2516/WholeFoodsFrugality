@@ -12,8 +12,8 @@ def items_on_sale():
 	'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7,ru;q=0.6,la;q=0.5,pt;q=0.4,de;q=0.3',
 	'cache-control': 'max-age=0',
 	'upgrade-insecure-requests': '1',
-	'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'}).json()
-	html_content = page_sourced.content
+	'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'}).content
+	html_content = orjson.loads("u'"+page_sourced)
 	listings = html_content['results']
 	dollar_price, name_items = [], []
 	for i in listings:

@@ -9,7 +9,7 @@ def write_to_sheet(dataframe, sheet_name):
 	creds = ServiceAccountCredentials.from_json_keyfile_name(credentials)
 	client = gspread.authorize(creds)
 	sheet = client.open("FoodSaleScrapeData").worksheet(sheet_name)
-	row = [email,str(datetime.today())]
-	sheet.append_row(row)
-	num = next_available_row(sheet)
+	sheet.update([dataframe.columns.values.tolist()] + dataframe.values.tolist())
 	return 'Done'
+
+print(write_to_sheet(pd.DataFrame({'Hello':[1,2,3]}),'Try'))
