@@ -13,6 +13,6 @@ def go(inputs, store_name):
 	elif store_name == 'Aldis US':
 		final_df = aldis_us_sale.items_on_sale()
 	elif store_name == 'Aldis UK':
-		final_df = aldis_us_sale.items_on_sale()
+		final_df = aldis_uk_sale.items_on_sale()
 	return final_df.to_html()
 	
