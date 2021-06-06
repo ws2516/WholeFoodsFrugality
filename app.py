@@ -5,11 +5,12 @@ import gspread
 import tabulate
 import email_sign_up
 
+
 from model import combination_file
 
 
 from flask import Flask, request, render_template, session, redirect
-
+from flask import send_from_directory
 
 app = flask.Flask(__name__, template_folder='templates', static_folder = 'assets')
 
