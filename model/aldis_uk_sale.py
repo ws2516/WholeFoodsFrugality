@@ -13,7 +13,7 @@ def items_on_sale():
 	'cache-control': 'max-age=0',
 	'upgrade-insecure-requests': '1',
 	'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'}).content
-	html_content = orjson.loads("u'"+page_sourced)
+	html_content = orjson.loads(page_sourced)
 	listings = html_content['results']
 	dollar_price, name_items = [], []
 	for i in listings:
