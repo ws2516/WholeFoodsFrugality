@@ -11,3 +11,11 @@ def write_to_sheet(dataframe, sheet_name):
 	sheet = client.open("FoodScrapeData").worksheet(sheet_name)
 	sheet.update([dataframe.columns.values.tolist()] + dataframe.values.tolist())
 	return 'Done'
+
+def get_from_sheet(sheet_name):
+	credentials = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
+	creds = ServiceAccountCredentials.from_json_keyfile_name(credentials)
+	client = gspread.authorize(creds)
+	sheet = client.open("FoodScrapeData").worksheet(sheet_name)
+	return sheet.get_all_values()
+

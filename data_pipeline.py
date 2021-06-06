@@ -5,4 +5,4 @@ import model
 from model import aldis_us_sale
 
 
-print(update_with_df.write_to_sheet(aldis_us_sale.items_on_sale(),'Try'))
+print(update_with_df.get_from_sheet('Try'))
