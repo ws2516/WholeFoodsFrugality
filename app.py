@@ -4,6 +4,7 @@ import model
 import gspread
 import tabulate
 import email_sign_up
+import os
 
 
 from model import combination_file
