@@ -2,7 +2,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import datetime
 from datetime import datetime
-imoprt pandas as pd
+import pandas as pd
 import os
 
 def write_to_sheet(dataframe, sheet_name):
