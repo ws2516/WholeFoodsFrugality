@@ -4,5 +4,13 @@ import pandas as pd
 import model
 from model import aldis_us_sale
 
-
-print(update_with_df.get_from_sheet('Try'))
+def go(inputs, store_name):
+	if store_name == 'WholeFoods':
+		final_df = update_with_df.get_from_sheet('Whole Foods')
+	elif store_name == 'Aldi AU':
+		final_df = update_with_df.get_from_sheet('Aldi AU')
+	elif store_name == 'Aldi US':
+		final_df = update_with_df.get_from_sheet('Aldi US')
+	elif store_name == 'Aldi UK':
+		final_df = update_with_df.get_from_sheet('Aldi UK')
+	return final_df.to_html()
