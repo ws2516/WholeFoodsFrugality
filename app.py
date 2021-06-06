@@ -3,7 +3,10 @@ import gunicorn
 import model
 import gspread
 import tabulate
+import email_sign_up
+
 from model import combination_file
+
 
 from flask import Flask, request, render_template, session, redirect
 
@@ -34,6 +37,21 @@ def further_suggestions():
 @app.route('/About')
 def contact_page():
     return flask.render_template('About.html')
+
+@app.route('/SignUp', methods=['GET', 'POST'])
+def sign_up_sheet():
+
+    if flask.request.method == 'GET':
+
+        return(flask.render_template('SignUp.html'))
+
+    if flask.request.method == 'POST':
+    	
+    	email = flask.request.form['Email']
+    	
+    	waiting_number = email_sign_up.write_to_sheet(email)
+    	
+    	return render_template('SignUpThankYou.html', waiting = waiting_number)
 
 @app.errorhandler(500)
 def pageNotFound(error):
