@@ -7,6 +7,7 @@ import os
 def write_to_sheet(email):
 	credentials = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
 	creds = ServiceAccountCredentials.from_json_keyfile_name(credentials)
+	client = gspread.authorize(creds)
 	sheet = client.open("FoodSaleScrapeSignUp").sheet1
 	row = [email,str(datetime.today())]
 	sheet.append_row(row)
