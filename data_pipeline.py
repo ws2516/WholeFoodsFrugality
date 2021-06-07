@@ -13,5 +13,7 @@ def go(inputs, store_name):
 		final_df = update_with_df.get_from_sheet('Aldi US')
 	elif store_name == 'Aldi UK':
 		final_df = update_with_df.get_from_sheet('Aldi UK')
+	elif store_name == 'Lidl':
+		final_df = update_with_df.get_from_sheet('Lidl')
 	return final_df.to_html()
 
