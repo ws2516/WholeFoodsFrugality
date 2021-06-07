@@ -55,11 +55,6 @@ def sign_up_sheet():
 @app.errorhandler(500)
 def pageNotFound(error):
     return flask.render_template('505.html')
-    
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'assets'),
-                          'favicon.ico',mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
     app.run()
