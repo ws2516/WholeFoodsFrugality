@@ -23,10 +23,22 @@ def main():
     	zip_code = flask.request.form['ZIP']
     	
     	store_name = flask.request.form['store_name']
-
-    	messaged = data_pipeline.go(zip_code, store_name)
     	
-    	return render_template('index.html', waiting = messaged)
+    	ingredient = flask.request.form['ingredient']
+
+    	choices = data_pipeline.go(zip_code, store_name)
+    	
+    	chosen = data_pipeline.filter_function(choices, ingredient)
+    	
+    	if len(chosen) == 0:
+    		
+    		messaged = "No products fit your description unfortunately! Come back another time!"
+    	
+    	else:
+    	
+    		messaged = data_pipeline.webify(chosen)
+    	
+    	return render_template('index.html', waiting = messaged, viewing = store_name)
 
 
 @app.route('/FutureProjects')

@@ -80,13 +80,16 @@
                      <div align = "left">
                         <label for="store_name">Choose a grocery chain:</label>
                         <select name="store_name" id="store_name">
-                           <option value="WholeFoods">Whole Foods</option>
+                           <option value="Whole Foods">Whole Foods</option>
                            <option value="Aldi US">Aldi US</option>
                            <option value="Aldi AU">Aldi AU</option>
                            <option value="Aldi UK">Aldi UK</option>
                            <option value="Lidl">Lidl</option>
                         </select>
                      </div>
+                     <br>
+                     <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control" type="text" name="ingredient" placeholder="Enter a desired ingredient! (This is optional)" style="padding: 11px 16px;"></div>
+                     <br>
                   </form>
                </div>
             </div>
@@ -106,7 +109,7 @@
       </script>
       </section>
       <section>
-         <div class="special" align = "center"> <br> <br> {{ waiting | safe}} <br> <br> </div>
+         <div align = "center"> <br>  You have selected <b>{{ viewing | safe }}!</b> <br> <br> {{ waiting | safe}} <br> <br> </div>
       </section>
       <!-- Start: Footer Basic -->
       <footer class="footer-basic">
