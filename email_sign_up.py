@@ -8,7 +8,7 @@ def write_to_sheet(email):
 	credentials = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
 	creds = ServiceAccountCredentials.from_json_keyfile_name(credentials)
 	client = gspread.authorize(creds)
-	sheet = client.open("FoodSaleScrapeSignUp").sheet1
+	sheet = client.open("FoodSaleScrapeSignUp").worksheet('WeeklyUpdate')
 	row = [email,str(datetime.today())]
 	sheet.append_row(row)
 	num = next_available_row(sheet)
